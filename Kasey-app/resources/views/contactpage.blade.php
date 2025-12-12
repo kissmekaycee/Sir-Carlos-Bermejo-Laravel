@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - SIR SARJ</title>
+    <title>Contact | Kasey</title>
     <style>
+        :root {
+            --bg: #f7f7fa;
+            --card: #ffffff;
+            --text: #1f2933;
+            --muted: #4b5563;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+        }
         * {
             margin: 0;
             padding: 0;
@@ -12,141 +20,123 @@
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
         }
-        nav {
-            background-color: #2c3e50;
-            padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: color 0.3s;
-        }
-        nav a:hover {
-            color: #3498db;
-        }
-        .container {
-            max-width: 1200px;
+        main {
+            max-width: 960px;
             margin: 0 auto;
-            padding: 3rem 2rem;
+            padding: 2.5rem 1.5rem 3rem;
+            display: grid;
+            gap: 1.5rem;
         }
-        .contact-header {
+        .page-title {
+            display: grid;
+            gap: 0.4rem;
             text-align: center;
-            margin-bottom: 3rem;
         }
-        .contact-header h1 {
-            font-size: 2.5rem;
-            color: #667eea;
-            margin-bottom: 0.5rem;
-        }
-        .contact-form {
-            background: white;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
+        .page-title::after {
+            content: "";
+            width: 90px;
+            height: 4px;
+            margin: 0.35rem auto 0;
             display: block;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-            color: #2c3e50;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
         }
-        .form-group input,
-        .form-group textarea {
+        .page-title h1 {
+            font-size: 1.9rem;
+            letter-spacing: -0.02em;
+        }
+        .page-title p {
+            color: var(--muted);
+        }
+        form {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            display: grid;
+            gap: 1rem;
+        }
+        label {
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            display: block;
+            color: var(--text);
+        }
+        input,
+        textarea {
             width: 100%;
             padding: 0.75rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 1px solid var(--border);
+            border-radius: 10px;
             font-size: 1rem;
-            transition: border-color 0.3s;
+            font-family: inherit;
+            background: #fdfdff;
+            transition: border 0.15s ease, box-shadow 0.15s ease;
         }
-        .form-group input:focus,
-        .form-group textarea:focus {
+        input:focus,
+        textarea:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
         }
-        .form-group button {
-            background-color: #667eea;
-            color: white;
-            padding: 0.75rem 2rem;
+        button {
+            background: var(--accent);
+            color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
+            padding: 0.85rem 1.2rem;
+            font-weight: 700;
             cursor: pointer;
-            font-weight: bold;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-            width: 100%;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
         }
-        .form-group button:hover {
-            background-color: #764ba2;
+        button:hover,
+        button:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(37, 99, 235, 0.18);
         }
         footer {
-            background-color: #2c3e50;
-            color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            padding: 2rem 1.5rem 3rem;
+            color: var(--muted);
+            font-size: 0.95rem;
         }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <div class="contact-header">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you! Please fill out the form below.</p>
+    <main>
+        <div class="page-title">
+            <h1>Contact us</h1>
+            <p>Send a quick note and we will reply with next steps.</p>
         </div>
 
-        <form class="contact-form" method="POST" action="/contact">
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+        <form method="POST" action="/contact">
+            <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Alex Doe" required>
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+            <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
             </div>
-            <div class="form-group">
+            <div>
                 <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
+                <input id="subject" name="subject" type="text" placeholder="What can we help with?" required>
             </div>
-            <div class="form-group">
+            <div>
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
+                <textarea id="message" name="message" rows="5" placeholder="Share a few details…" required></textarea>
             </div>
-            <div class="form-group">
-                <button type="submit">Send Message</button>
-            </div>
+            <button type="submit">Send message</button>
         </form>
-    </div>
+    </main>
 
     <footer>
-        <p>&copy; 2025 SIR BERMEJO LARAVEL</p>
+        <p>We usually reply within one business day · Kasey Studio</p>
     </footer>
 </body>
 </html>
